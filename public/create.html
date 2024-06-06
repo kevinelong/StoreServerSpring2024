@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="name" id="productName">
+    <input type="text" placeholder="description" id="productDescription">
+    <input type="number" placeholder="price" id="productPrice" vallue="1.00">
+    <button id="saveButton">SAVE</button>
+    <!-- <form action="/api/product" method="POST">   
+    </form> -->
+</body>
+<script>
+    saveButton.addEventListener("click", e=>{
+        fetch("/api/product", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: productName.value,
+                description: productDescription.value,
+                price: productPrice.value,
+            })
+        })
+    });
+</script>
+
+</html>
